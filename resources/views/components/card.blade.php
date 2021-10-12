@@ -1,7 +1,7 @@
 @props(['post'])
 <a href="/post/{{ $post->id }}" class="flex flex-col rounded-xl bg-gray-300">
 
-    <img src="/storage/{{ $post->thumbnail }}" alt="Thumbnail Image" class="rounded-xl">
+    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Thumbnail Image" class="rounded-xl">
 
     <div class="flex flex-col p-4 flex-grow">
         <h1 class="mb-2 z-50">{{ $post->title }}</h1>
