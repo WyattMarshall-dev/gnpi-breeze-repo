@@ -53,7 +53,7 @@ class PostController extends Controller
         ]);
 
         $attributes['user_id'] = auth()->id();
-        $attributes['thumbnail'] = request()->file('thumbnail')->store('');
+        $attributes['thumbnail'] = request()->file('thumbnail')->store('/');
 
         Post::create($attributes);
 
@@ -108,7 +108,7 @@ class PostController extends Controller
         ]);
 
         if (isset($attributes['thumbnail'])) {
-            $attributes['thumbnail'] = request()->file('thumbnail')->store('');
+            $attributes['thumbnail'] = request()->file('thumbnail')->store('/');
         };
 
         $post->update($attributes);
